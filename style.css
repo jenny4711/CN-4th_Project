@@ -278,11 +278,11 @@ border-radius: 50%;
 @media only screen and (max-width:768px){
  
 
-  /* .music-sec,.hero-image,.menus,.nav-ul{
+   .music-sec,.nav-ul{
     width:100%;
     height:100%;
-  } */
- 
+  } 
+  
   .menu-img{
     width:10rem;
     height:10rem;
