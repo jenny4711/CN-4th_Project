@@ -29,7 +29,7 @@ li {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  background-size: 1500px 700px;
+  /* background-size: 1500px 700px; */
   background-color: #06546c;
 }
 
@@ -81,8 +81,8 @@ li {
 .menu-img {
   margin: 2rem;
 
-  width: 20rem;
-  height: 20rem;
+  width: 30rem;
+  height: 30rem;
   border-radius: 10%;
   box-shadow: 5px 5px 5px #000;
 }
@@ -162,7 +162,7 @@ li {
 .music-sec {
   display: flex;
   flex-direction: column;
-
+height:100vh;
   background-color: #06546c;
 }
 
@@ -170,6 +170,7 @@ li {
 #typing-form {
   display: flex;
   justify-content: center;
+  
   width: 30em;
 }
 
@@ -190,7 +191,7 @@ li {
    width:28rem;
  margin:2em;
   background-color: #f1faee;
-  color: #bc6c25;
+  color: #06546c;
   padding: 2em;
   padding-bottom: 1em;
   border-radius: 10%;
@@ -231,7 +232,7 @@ li {
 .pagination{
   display:flex;
   justify-content: center;
-
+  margin-top:10rem;
   background-color: #06546c;
   margin-bottom:0;
 
