@@ -91,14 +91,14 @@ const getSource = async () => {
 };
 
 const getSearch = async () => {
-  url = new URL(` http://localhost:3004/ccm?_limit=4`);
+  url = new URL(` https://my-json-server.typicode.com/jenny4711/CN-4th_Project/ccm?_limit=4`);
   console.log(url)
   await getSource();
   render();
 };
 
 const getByKeyword = async (keyword) => {
-  url = new URL(`http://localhost:3004/ccm/?q=${keyword}`);
+  url = new URL(`https://my-json-server.typicode.com/jenny4711/CN-4th_Project/ccm/?q=${keyword}`);
   await getSource();
   render();
 };
