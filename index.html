@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="hero-image">
+      <div class="hero-text">
+        <h1 style="font-size: 50px">Praise Typing Game</h1>
+        <h6>How good it is to be near God!! <br>-Psalms 73:28</h6>
+      </div>
+    </div>
+    <ul class="nav-ul" id="nav-ul">
+      <li id="nav-home">Menu</li>
+      <li id="nav-ccm">CCM</li>
+      <li id="nav-typing">Typing</li>
+      <li id="nav-all">CCM&Typing</li>
+    </ul>
+
+    <section id="menus" class="menus">
+      <div class="first grid text-center">
+        <div class="g-col-4"><img class="menu-img" src="/img/ccm.jpeg" /></div>
+        <div class="first-text g-col-8">
+          <h3 id="menus-ccm">듣고 싶은 CCM 듣기</h3>
+        </div>
+      </div>
+
+      <div class="second grid text-center">
+        <div class="second-text g-col-8">
+          <h3 id="menus-typing">타이핑게임 하며 말씀 보기</h3>
+        </div>
+        <div class="g-col-4">
+          <img class="menu-img" src="/img/typing.jpeg" />
+        </div>
+      </div>
+    </section>
+
+    <section id="typing-sec" class="typic-sec hide">
+      <h2 class="typing-h2">타이핑 게임</h2>
+      <button id="startBtn" class="startBtn" onclick="run()">START</button>
+      <div class="play">
+        <div id="time">timer:<span id="timer">0</span></div>
+        <div id="score">score<span id="scoreNums">0</span></div>
+        <div id="show">
+          <h5 id="typing-text">시작</h5>
+        </div>
+
+        <div id="type-area">
+          <div id="typing-form">
+            <input
+              type="text"
+              id="input-typing"
+              class="input-typing"
+              placeholder="Type Here"
+           
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="music-sec" class="music-sec hide">
+      <h2>찬양 듣기</h2>
+
+      <div id="search-form" class="input-group mb-3">
+        <input
+          type="text"
+          id="input-search"
+          class="input-search"
+          placeholder="Search CCM"
+        />
+        <button type="button" id="searchBtn" class="searchBtn">Button</button>
+      </div>
+
+      <!-- ----------------------- -->
+
+      <div id="result" class="row">
+        <h3>은혜 아니면</h3>
+
+        <div class="source item">
+          <iframe
+            width="350"
+            height="250"
+            src="https://www.youtube.com/embed/NGB2VVH5Z80"
+            allowfullscreen
+          ></iframe>
+          <img
+            class="img"
+            src="https://blog.kakaocdn.net/dn/bUtbmZ/btqMr5BLnl5/lQXKEYmyuwkDE6YhxW1iGk/img.jpg"
+            alt="sheet"
+          />
+        </div>
+      </div>
+      <nav aria-label="Page navigation example">
+        <ul class="pagination" id="pagination">
+  
+        </ul>
+      </nav>
+      
+    </section>
+   
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js" differ></script>
+  </body>
+</html>

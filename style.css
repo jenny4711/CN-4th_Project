@@ -1,0 +1,297 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav-ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+
+  background-color: #06546c;
+  color: white;
+  list-style: none;
+  margin-bottom: 0;
+}
+li {
+  margin-left: 1rem;
+}
+
+/* top */
+.hero-image {
+  background-image: url("/img/topbk.jpg");
+  /* background-color: #023047; */
+  height: 100vh;
+  width: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  background-size: 1500px 700px;
+  background-color: #06546c;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  color: black;
+}
+/* menus */
+.menus {
+  display: flex;
+
+  /* align-items: center; */
+  flex-direction: column;
+  justify-content: center;
+  height: 120vh;
+  width: 100vw;
+
+  background: #06546c;
+  color: white;
+}
+.first {
+  display: flex;
+
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.first-text {
+  display: flex;
+  align-items: center;
+  animation: slide 2s ease-out;
+}
+.second-text {
+  display: flex;
+  align-items: center;
+  animation: slide2 2s ease-out;
+}
+
+.second {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.menu-img {
+  margin: 2rem;
+
+  width: 20rem;
+  height: 20rem;
+  border-radius: 10%;
+  box-shadow: 5px 5px 5px #000;
+}
+
+.typing-sec,
+.music-sec {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  
+}
+
+/* typing-game */
+.typing-h2 {
+  color: white;
+}
+
+.typic-sec {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #06546c;
+}
+.startBtn {
+  border-style: none;
+  background-color: #06546c;
+  color: white;
+}
+.play {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 35rem;
+  margin-top: 2em;
+  background-color: #f1faee;
+  color: #06546c;
+  padding: 2em;
+  padding-bottom: 2em;
+  border-radius: 10%;
+  box-shadow: 10px 10px 10px #000;
+}
+
+#score {
+  margin: 1rem;
+}
+#show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #06546c;
+  border-radius: 10%;
+  color: white;
+  width: 30rem;
+  height: 12rem;
+  padding:2rem;
+
+  border: 2px solid black;
+  margin: 1rem;
+}
+.typing-text {
+  padding: 1rem;
+}
+#typing-form {
+  width: 25rem;
+}
+#input-typing {
+  height: 3em;
+}
+
+/* music */
+
+.music-sec {
+  display: flex;
+  flex-direction: column;
+
+  background-color: #06546c;
+}
+
+#search-form,
+#typing-form {
+  display: flex;
+  justify-content: center;
+  width: 30em;
+}
+
+#result{
+  display:flex;
+  justify-content:center;
+
+}
+
+
+
+.source {
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+   width:28rem;
+ margin:2em;
+  background-color: #f1faee;
+  color: #bc6c25;
+  padding: 2em;
+  padding-bottom: 1em;
+  border-radius: 10%;
+  box-shadow: 10px 10px 10px #000;
+}
+
+
+
+.img {
+  width: 25em;
+  height: 15em;
+}
+.img:hover {
+  position: absolute;
+  width: 25em;
+  height: 30em;
+}
+
+.input-search,
+.input-typing {
+  width: 28rem;
+  border-radius: 5px;
+}
+.searchBtn {
+  background-color: #06546c;
+  border-radius: 5px;
+  color: white;
+}
+
+.hide {
+  display: none;
+}
+
+
+
+
+/* pagination */
+.pagination{
+  display:flex;
+  justify-content: center;
+
+  background-color: #06546c;
+  margin-bottom:0;
+
+}
+.page-link{
+background-color: #06546c;
+color:white;
+border-radius: 50%;
+
+}
+
+
+@keyframes slide {
+  from {
+    margin-right: 200rem;
+    opacity: 0;
+  }
+  to {
+    margin-left: 0rem;
+    opacity: 1;
+  }
+}
+
+
+@keyframes slide2 {
+  from {
+    margin-left: 200rem;
+  }
+  to {
+    margin-right: 0rem;
+  }
+}
+
+@keyframes showBar {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width:768px){
+  .typic-sec,.music-sec,.hero-image,.menus{
+    width:48vh;
+  }
+  .menu-img{
+    width:10rem;
+    height:10rem;
+  }
+  .play{
+    width:20rem;
+  }
+#show{
+  width:15rem;
+}
+#input-typing,#search-form{
+  width:15rem;
+}
+.first-text,.second-text{
+  width:4rem;
+}
+}
