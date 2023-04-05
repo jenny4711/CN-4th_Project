@@ -48,6 +48,32 @@
 
     <section id="typing-sec" class="typic-sec hide">
       <h2 class="typing-h2">타이핑 게임</h2>
+      <form>
+        <select name="bible" id="bible" onchange="changeFn()">
+          <label for="cars">Choose offline:</label>
+          <option value="mat">마태복음</option>
+          <option value="mark">마가복음</option>
+          <option value="luke">누가복음</option>
+          <option value="john">요한복음</option>
+          <option value="acts">사도행전</option>
+          <option value="rom">로마서</option>
+          <option value="1cor">고린도전서</option>
+          <option value="2cor">고린도후서</option>
+          <option value="gal">갈라디아서</option>
+          <option value="eph">예배소서</option>
+          <option value="phi">빌립보서</option>
+          <option value="col">골로새서</option>
+          <option value="1th">데살로니가전서</option>
+          <option value="2th">데살로니가후서</option>
+          <option value="1tim">디모데전서</option>
+          <option value="2tim">디모데후서</option>
+          <option value="titus">디도서</option>
+          <option value="phmn">빌레몬서</option>
+          <option value="heb">히브리서</option>        
+        </select>
+        <input type="submit" value="Submit">
+      </form>
+      
       <button id="startBtn" class="startBtn" onclick="run()">START</button>
       <div class="play">
         <div id="time">timer:<span id="timer">0</span></div>

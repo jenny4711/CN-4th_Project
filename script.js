@@ -1,7 +1,7 @@
 const menusSec = document.getElementById("menus");
 const typingSec = document.getElementById("typing-sec");
 const musicSec = document.getElementById("music-sec");
-const mainSec=document.querySelector(".hero-image")
+const mainSec = document.querySelector(".hero-image");
 
 const ccmBtn = document.getElementById("menus-ccm");
 const typingBtn = document.getElementById("menus-typing");
@@ -25,7 +25,7 @@ const getScore = document.getElementById("scoreNums");
 const timer = document.getElementById("timer");
 
 const startBtn = document.getElementById("startBtn");
-
+const select=document.getElementById("bible")
 const GAME_TIME = 60;
 let list = [];
 const words = [];
@@ -55,7 +55,7 @@ async function goToCCM(evt) {
   musicSec.classList.toggle("hide");
   typingSec.classList.add("hide");
   menusSec.classList.add("hide");
-  mainSec.classList.add("hide")
+  mainSec.classList.add("hide");
 
   await getSearch();
 }
@@ -78,7 +78,7 @@ async function makeInput(evt) {
 }
 
 const getSource = async () => {
-  url.searchParams.set("_page",page)
+  url.searchParams.set("_page", page);
   try {
     let res = await fetch(url);
     let data = await res.json();
@@ -91,14 +91,18 @@ const getSource = async () => {
 };
 
 const getSearch = async () => {
-  url = new URL(` https://my-json-server.typicode.com/jenny4711/CN-4th_Project/ccm?_limit=4`);
-  console.log(url)
+  url = new URL(
+    ` https://my-json-server.typicode.com/jenny4711/CN-4th_Project/ccm?_limit=4`
+  );
+  console.log(url);
   await getSource();
   render();
 };
 
 const getByKeyword = async (keyword) => {
-  url = new URL(`https://my-json-server.typicode.com/jenny4711/CN-4th_Project/ccm/?q=${keyword}`);
+  url = new URL(
+    `https://my-json-server.typicode.com/jenny4711/CN-4th_Project/ccm/?q=${keyword}`
+  );
   await getSource();
   render();
 };
@@ -121,17 +125,16 @@ const render = () => {
   result.innerHTML = show;
 };
 
-let page=1;
-let total_page=1;
+let page = 1;
+let total_page = 1;
 // pagination
-const pagination=()=>{
-  let pgnHTML =``;
-  let pageGroup=Math.ceil(page/5);
-  let last = pageGroup *5;
-  let first = last -4;
+const pagination = () => {
+  let pgnHTML = ``;
+  let pageGroup = Math.ceil(page / 5);
+  let last = pageGroup * 5;
+  let first = last - 4;
 
- 
-  pgnHTML +=` <li class=${page == 1 ? "hide" : "page-item"}>
+  pgnHTML += ` <li class=${page == 1 ? "hide" : "page-item"}>
   <a class="page-link" href="#" aria-label="Previous" onclick="moveToPage(${
     page - 1
   })">
@@ -139,11 +142,10 @@ const pagination=()=>{
   </a>
 </li>`;
 
-
-  for(let i=first;i <=last;i++){
-    pgnHTML += `<li class="page-item ${page ===i?"activate":""}">
+  for (let i = first; i <= last; i++) {
+    pgnHTML += `<li class="page-item ${page === i ? "activate" : ""}">
     <a class="page-link" href="#" onclick="moveToPage(${i})">${i}</a>
-    </li>`
+    </li>`;
   }
 
   pgnHTML += `<li class=${page == 5 ? "hide" : "page-item"}>
@@ -157,15 +159,12 @@ const pagination=()=>{
   
   </li>`;
 
- 
+  render();
+  document.getElementById("pagination").innerHTML = pgnHTML;
+};
 
-  render()
-  document.getElementById("pagination").innerHTML=pgnHTML;
-
-}
-
-const moveToPage=async(pageNum)=>{
-  page=pageNum;
+const moveToPage = async (pageNum) => {
+  page = pageNum;
   if (page < 1) {
     page = 5;
   } else if (page > 5) {
@@ -173,18 +172,8 @@ const moveToPage=async(pageNum)=>{
   } else {
     page;
   }
-  await getSource() 
-}
-
-
-
-
-
-
-
-
-
-
+  await getSource();
+};
 
 // TYPING GAME
 const getWords = async (cat, aa, bb) => {
@@ -198,7 +187,7 @@ const getWords = async (cat, aa, bb) => {
     data.map((item) => {
       if (item.message.length < 40) {
         words.push(item.message);
-        console.log(words);
+       
       }
     });
     buttonChange("START");
@@ -207,10 +196,16 @@ const getWords = async (cat, aa, bb) => {
   }
 };
 
-init();
-function init() {
+function changeFn(){
+  let value=(select.options[select.selectedIndex].value)
+  init(value)
+}
+changeFn()
+
+function init(value) {
   buttonChange("LOADING");
-  getWords("mat", "10:10", "11:10");
+  
+  getWords(value, "10:10", "11:10");
   words;
   inputTyping.addEventListener("input", checkMatch);
 }
@@ -232,7 +227,6 @@ function checkStatus() {
   if (!isPlaying && time === 0) {
     buttonChange("START");
     clearInterval(checkInterval);
-    
   }
 }
 
@@ -261,10 +255,3 @@ function countDown() {
 function buttonChange(text) {
   startBtn.innerHTML = text;
 }
-
-
-
-
-
-
-
