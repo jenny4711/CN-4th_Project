@@ -170,7 +170,7 @@ height:100vh;
 #typing-form {
   display: flex;
   justify-content: center;
-  
+
   width: 30em;
 }
 
@@ -276,15 +276,23 @@ border-radius: 50%;
 }
 
 @media only screen and (max-width:768px){
-  .typic-sec,.music-sec,.hero-image,.menus{
-    width:48vh;
+  .music-sec,.hero-image,.menus,.nav-ul{
+    width:100%;
+    height:100%;
   }
+ 
   .menu-img{
     width:10rem;
     height:10rem;
   }
   .play{
     width:20rem;
+  }
+  .img{
+    width:100%;
+  }
+  #result{
+    width:85%;
   }
 #show{
   width:15rem;
@@ -295,4 +303,5 @@ border-radius: 50%;
 .first-text,.second-text{
   width:4rem;
 }
+
 }
